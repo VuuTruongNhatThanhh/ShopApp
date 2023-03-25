@@ -16,7 +16,7 @@
             android:layout_height="match_parent">
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarhome"
-                app:title="Home"
+                app:title="Trang chủ"
                 android:background="#8D7B68"
                 app:titleTextColor="@color/white"
                 android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                 android:textSize="20sp"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/white"
-                android:text="New products"
+                android:text="Sản phẩm mới"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -64,6 +64,7 @@
             android:layout_height="match_parent"
             >
             <ListView
+                android:layout_marginTop="10dp"
                 android:background="#A4907C"
                 android:id="@+id/listviewhome"
                 android:layout_width="wrap_content"
