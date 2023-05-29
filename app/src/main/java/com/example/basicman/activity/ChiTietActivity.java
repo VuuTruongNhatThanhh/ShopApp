@@ -84,7 +84,7 @@ public class ChiTietActivity extends AppCompatActivity {
         mota.setText(sanPhamMoi.getMota());
         Glide.with(getApplicationContext()).load(sanPhamMoi.getHinhanh()).into(imghinhanh);
         DecimalFormat decimalFormat = new DecimalFormat ("###，###，###");
-        giasp.setText("Giá: "+decimalFormat.format(Double.parseDouble (sanPhamMoi.get6iasp()))+ "Đ");
+        giasp.setText("Giá: "+decimalFormat.format(Double.parseDouble (sanPhamMoi.getGiasp()))+ "Đ");
         Integer[] so = new Integer[]{1, 2, 5, 4, 5, 6, 7, 8, 9, 10};
         ArrayAdapter<Integer> adapterspin = new ArrayAdapter<> ( this, R.layout.support_simple_spinner_dropdown_item, so) ;
         spinner.setAdapter (adapterspin) ;
