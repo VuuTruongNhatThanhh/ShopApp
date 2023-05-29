@@ -40,7 +40,7 @@
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/imgchitiet"
-            android:src="@drawable/mma"
+            android:src="@drawable/iconnnew_w512"
             android:layout_width="150dp"
             android:layout_height="200dp"
             tools:ignore="MissingConstraints" />
