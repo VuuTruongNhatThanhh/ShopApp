@@ -17,6 +17,7 @@ import com.example.basicman.Interface.ItemClickListener;
 import com.example.basicman.R;
 import com.example.basicman.activity.DetailActivity;
 import com.example.basicman.model.NewProduct;
+import com.example.basicman.utils.Utils;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -70,7 +71,13 @@ public class CasioAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
             myViewHolder.price.setText(decimalFormat.format(Double.parseDouble(product.getPrice()))+" VND");
             myViewHolder.des.setText(product.getDescrip());
-            Glide.with(context).load(product.getImg()).into(myViewHolder.image);
+//            Glide.with(context).load(product.getImg()).into(myViewHolder.image);
+            if(product.getImg().contains("http")){
+                Glide.with(context).load(product.getImg()).into(((MyViewHolder) holder).image);
+            }else{
+                String img = Utils.BASE_URL+"images/"+product.getImg();
+                Glide.with(context).load(img).into(((MyViewHolder) holder).image);
+            }
             //click to detail
             myViewHolder.setItemClickListener(new ItemClickListener() {
                 @Override

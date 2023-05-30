@@ -5,6 +5,11 @@ public class TypeProduct {
     String name;
     String img;
 
+    public TypeProduct(String name, String img) {
+        this.name = name;
+        this.img = img;
+    }
+
     public TypeProduct() {
     }
 

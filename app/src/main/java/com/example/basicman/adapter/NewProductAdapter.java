@@ -17,6 +17,7 @@ import com.example.basicman.Interface.ItemClickListener;
 import com.example.basicman.R;
 import com.example.basicman.activity.DetailActivity;
 import com.example.basicman.model.NewProduct;
+import com.example.basicman.utils.Utils;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -43,7 +44,12 @@ public class NewProductAdapter extends RecyclerView.Adapter<NewProductAdapter.My
         holder.txtname.setText(newProduct.getName());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.txtprice.setText(decimalFormat.format(Double.parseDouble(newProduct.getPrice()))+" VND");
-        Glide.with(context).load(newProduct.getImg()).into(holder.imgImage);
+
+        if(newProduct.getImg().contains("http")){
+            Glide.with(context).load(newProduct.getImg()).into(holder.imgImage);
+        }else {
+            Glide.with(context).load(Utils.BASE_URL+"images/"+newProduct.getImg()).into(holder.imgImage);
+        }
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int pos, boolean isLongClick) {
